@@ -1,12 +1,12 @@
 import asyncio
-from mcstatus import MinecraftServer
+from mcstatus import JavaServer
 from telegram import Bot
 
 # ==================== НАСТРОЙКИ ====================
 TELEGRAM_TOKEN = "8984052950:AAGgYMhL7Vy51W5OaT1OWaCKF0lLJ8Jqsek"
 CHAT_ID = -1001234567890
 SERVER_ADDRESS = "play4.eternalzero.cloud:26369"
-CHECK_INTERVAL = 20
+CHECK_INTERVAL = 15
 # ====================================================
 
 bot = Bot(token=TELEGRAM_TOKEN)
@@ -18,7 +18,8 @@ async def check_server():
     
     while True:
         try:
-            server = await MinecraftServer.async_lookup(SERVER_ADDRESS)
+            # В новых версиях используется JavaServer вместо MinecraftServer
+            server = await JavaServer.async_lookup(SERVER_ADDRESS)
             status = await server.async_status()
             
             if not is_online:
