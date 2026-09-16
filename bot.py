@@ -4,7 +4,7 @@ from telegram import Bot
 
 # ==================== НАСТРОЙКИ ====================
 TELEGRAM_TOKEN = "8984052950:AAGgYMhL7Vy51W5OaT1OWaCKF0lLJ8Jqsek"
-CHAT_ID = -1001234567890
+CHAT_ID = -1001700915161
 SERVER_ADDRESS = "play4.eternalzero.cloud:26369"
 CHECK_INTERVAL = 15
 # ====================================================
